@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Gameboard from "./Gameboard";
 
 export default class Response extends Component {
   constructor(props) {
@@ -18,8 +19,12 @@ export default class Response extends Component {
     // this function should fire when the user fills the response and hits 'enter'
       // Is the user response correct? 
       // yes/no? What should happen?
-    //return this.state.userResponse;
-    //if (this.state.userResponse === )
+    if (this.state.userResponse === this.props.clue.answer) {
+      this.props.addValueToScore(this.props.clue.value);
+
+    } else {
+      this.props.substractValueFromScore(this.props.clue.value);
+    }
     event.preventDefault();
 
   }

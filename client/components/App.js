@@ -27,13 +27,27 @@ export default class App extends Component {
     })
   }
 
+  addValueToScore(value) {
+    var previousScore = this.state.score;
+    this.setState({
+      score: previousScore + value
+    })
+  }
+
+  substractValueFromScore(value) {
+    var previousScore = this.state.score;
+    this.setState({
+      score: previousScore - value
+    })
+  }
+
   render() {
     return (
       <div id={'app'}>
         What is Reactor 2?
         <Gameboard currentQuestion={this.state.currentQuestion} answeredQuestions={this.state.answeredQuestions} results={this.state.results} handleClueValueClick={this.handleClueValueClick.bind(this)}/>
        <Scoreboard score={this.state.score}/>
-       <Response />
+       <Response clue={this.state.currentQuestion} score={this.state.score} addValueToScore={this.addValueToScore.bind(this)} substractValueFromScore={this.substractValueFromScore.bind(this)}/>
       </div>
     );
   }
