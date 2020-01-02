@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Categories from "./Categories";
 
 const Gameboard = props => {
   return (
@@ -7,6 +8,7 @@ const Gameboard = props => {
       {/* was a question clicked?  */}
       {/* Yes? Show clue */}
       {/* No? Show Categories */}
+      {props.currentQuestion.question ? <div>{props.currentQuestion.question}</div> : <Categories categories={props.results} handleClueValueClick={props.handleClueValueClick}/>}
     </div>
   );
 };
