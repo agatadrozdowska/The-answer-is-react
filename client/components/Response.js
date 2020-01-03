@@ -21,9 +21,15 @@ export default class Response extends Component {
       // yes/no? What should happen?
     if (this.state.userResponse === this.props.clue.answer) {
       this.props.addValueToScore(this.props.clue.value);
+      this.setState({
+        userResponse: ''
+      })
 
     } else {
       this.props.substractValueFromScore(this.props.clue.value);
+      this.setState({
+        userResponse: ''
+      })
     }
     event.preventDefault();
 

@@ -30,14 +30,16 @@ export default class App extends Component {
   addValueToScore(value) {
     var previousScore = this.state.score;
     this.setState({
-      score: previousScore + value
+      score: previousScore + value,
+      currentQuestion: {}
     })
   }
 
   substractValueFromScore(value) {
     var previousScore = this.state.score;
     this.setState({
-      score: previousScore - value
+      score: previousScore - value,
+      currentQuestion: {}
     })
   }
 
