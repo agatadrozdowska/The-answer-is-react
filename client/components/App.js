@@ -43,13 +43,19 @@ export default class App extends Component {
     })
   }
 
+  addAnswer(clue) {
+    this.setState({
+      answeredQuestions: [...this.state.answeredQuestions, clue.answer]
+    })
+  }
+
   render() {
     return (
       <div id={'app'}>
         What is Reactor 2?
-        <Gameboard currentQuestion={this.state.currentQuestion} answeredQuestions={this.state.answeredQuestions} results={this.state.results} handleClueValueClick={this.handleClueValueClick.bind(this)}/>
+        <Gameboard currentQuestion={this.state.currentQuestion} answeredQuestions={this.state.answeredQuestions} results={this.state.results} handleClueValueClick={this.handleClueValueClick.bind(this)} addAnswer={this.addAnswer.bind(this)}/>
        <Scoreboard score={this.state.score}/>
-       <Response clue={this.state.currentQuestion} score={this.state.score} addValueToScore={this.addValueToScore.bind(this)} substractValueFromScore={this.substractValueFromScore.bind(this)}/>
+       <Response clue={this.state.currentQuestion} score={this.state.score} addValueToScore={this.addValueToScore.bind(this)} substractValueFromScore={this.substractValueFromScore.bind(this)} addAnswer={this.addAnswer.bind(this)}/>
       </div>
     );
   }

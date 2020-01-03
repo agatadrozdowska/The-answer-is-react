@@ -8,7 +8,7 @@ const Category = props => {
       {/* display category */}
       {/* display clues for each category */}
       <div>{props.category.title}</div>
-      {props.category.clues.map(clue => <Clue clue={clue} handleClueValueClick={props.handleClueValueClick}/>)}
+      {props.category.clues.map(clue => <Clue clue={clue} handleClueValueClick={props.handleClueValueClick} answeredQuestions={props.answeredQuestions} addAnswer={props.addAnswer}/>)}
     </div>
   );
 };

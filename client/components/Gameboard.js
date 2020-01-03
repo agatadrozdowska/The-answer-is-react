@@ -8,7 +8,7 @@ const Gameboard = props => {
       {/* was a question clicked?  */}
       {/* Yes? Show clue */}
       {/* No? Show Categories */}
-      {props.currentQuestion.question ? <div>{props.currentQuestion.question}</div> : <Categories categories={props.results} handleClueValueClick={props.handleClueValueClick}/>}
+      {props.currentQuestion.question ? <div>{props.currentQuestion.question}</div> : <Categories categories={props.results} handleClueValueClick={props.handleClueValueClick} answeredQuestions={props.answeredQuestions} addAnswer={props.addAnswer}/>}
     </div>
   );
 };

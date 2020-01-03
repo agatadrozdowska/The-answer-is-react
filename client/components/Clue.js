@@ -5,7 +5,11 @@ const Clue = props => {
   // show $ value of clue OR
   // the Clue question itself OR
   // empty screen if it was already answered
-  return <div className={"clueValue"} onClick={() => props.handleClueValueClick(props.clue)}>{props.clue.value}</div>
+  return (
+      <div>
+          {props.answeredQuestions.includes(props.clue.answer) ? <div></div> : <div className={"clueValue"} onClick={() => props.handleClueValueClick(props.clue)}>{props.clue.value}</div>}
+      </div>
+      )
   //return 'hi';
 };
 

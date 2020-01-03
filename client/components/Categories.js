@@ -6,7 +6,7 @@ const Categories = props => {
   return (
     <div id={'categories'} data-testid="categoryList">
       {/* display all the categories */}
-      {props.categories.map(category => <Category category={category} handleClueValueClick={props.handleClueValueClick}/>)}
+      {props.categories.map(category => <Category category={category} handleClueValueClick={props.handleClueValueClick} answeredQuestions={props.answeredQuestions} addAnswer={props.addAnswer}/>)}
     </div>
   );
 };
